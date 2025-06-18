@@ -1,0 +1,16 @@
+.root {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 583px;
+  height: 309px;
+  transform: translate(30%, -30%);
+  background: linear-gradient(
+    208deg,
+    rgba(232, 74, 74, 0.33) 0%,
+    rgba(232, 74, 74, 0) 100%
+  );
+  pointer-events: none;
+  z-index: 9999;
+  filter: blur(40px);
+}

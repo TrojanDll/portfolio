@@ -1,6 +1,17 @@
 :root {
-  --font-family: "JetBrains Mono", sans-serif;
+  --font-family: "Vivl", sans-serif;
   --second-family: "Big Shoulders", sans-serif;
+  --font-3: "JetBrains Mono", sans-serif;
+  --font-4: "Chakra Petch", sans-serif;
+
+  --dark: #000003;
+  --dark-grey: #242425;
+  --acid-green: #7dff68;
+  --red: #e84a4a;
+  --white: #ffffff;
+  --gold: #d4a944;
+  --blue: #4aafe8;
+  --green: #5de26a;
 
   --screen-desktop: 1520px;
   --screen-tablet: 1349px;
@@ -9,6 +20,24 @@
 
 body {
   font-family: var(--font-family);
+  background-color: var(--dark);
+  color: var(--white);
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Vivl";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/vivl-rail.otf");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Chakra Petch";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/ChakraPetch-Regular.otf");
 }
 
 @font-face {
@@ -16,7 +45,7 @@ body {
   font-family: "JetBrains Mono";
   font-style: normal;
   font-weight: 400;
-  src: url("fonts/jetbrains-mono-v23-cyrillic_latin-regular.woff2") format("woff2");
+  src: url("/fonts/jetbrains-mono-v23-cyrillic_latin-regular.woff2") format("woff2");
 }
 
 @font-face {
@@ -24,7 +53,7 @@ body {
   font-family: "JetBrains Mono";
   font-style: normal;
   font-weight: 600;
-  src: url("fonts/jetbrains-mono-v23-cyrillic_latin-600.woff2") format("woff2");
+  src: url("/fonts/jetbrains-mono-v23-cyrillic_latin-600.woff2") format("woff2");
 }
 
 @font-face {
@@ -32,7 +61,7 @@ body {
   font-family: "Big Shoulders";
   font-style: normal;
   font-weight: 700;
-  src: url("fonts/big-shoulders-v3-latin-700.woff2") format("woff2");
+  src: url("/fonts/big-shoulders-v3-latin-700.woff2") format("woff2");
 }
 
 // ------------------------ Reset and base styles  -----------------------------

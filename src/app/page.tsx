@@ -1,3 +1,10 @@
+import WelcomeScreen from "@/components/widgets/WelcomeScreen/WelcomeScreen";
+
 export default function Home() {
-  return <div>main</div>;
+  return (
+    <div>
+      main
+      <WelcomeScreen />
+    </div>
+  );
 }

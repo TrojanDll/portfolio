@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 
-
 import Header from "@/components/widgets/Header/Header";
 import Footer from "@/components/widgets/Footer/Footer";
 
@@ -9,6 +8,7 @@ import "./globals.scss";
 import Head from "next/head";
 import { Providers } from "./providers";
 import { SITE_NAME } from "@/constants/seo.constants";
+import MainGlow from "@/components/ui/MainGlow/MainGlow";
 
 export const metadata: Metadata = {
   title: {
@@ -56,6 +56,7 @@ export default function RootLayout({
       </Head> */}
       <body>
         <Providers>
+          <MainGlow />
           <Header />
           {children}
           <Footer />
