@@ -14,7 +14,6 @@ export default function WelcomeScreen() {
   const rootRef = useRef<HTMLDivElement>(null);
   const hiRef = useRef<HTMLParagraphElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
-  const textRef = useRef<HTMLParagraphElement>(null);
 
   useLayoutEffect(() => {
     const gsapContext = gsap.context(() => {
@@ -62,9 +61,6 @@ export default function WelcomeScreen() {
         opacity: 1,
       });
 
-      // tl.call(() => {
-      //   tween.timeScale(0.5).play(0);
-      // });
       tween.timeScale(0.45).play(0);
     }, rootRef);
 
@@ -76,6 +72,7 @@ export default function WelcomeScreen() {
       <p ref={hiRef} className={styles.greetings}>
         Hi!
       </p>
+
       <div ref={contentRef} className={styles.content}>
         <h1 className={styles.title}>Добро пожаловать на мой сайт-портфолио</h1>
         <P className={styles.text}>

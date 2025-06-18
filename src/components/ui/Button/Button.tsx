@@ -1,47 +1,14 @@
-"use client";
-
-import React, { PropsWithChildren } from "react";
-
-import styles from "./Button.module.scss";
 import AnimatedFillingButton from "./AnimatedFillingButton/AnimatedFillingButton";
+import BaseButton from "./BaseButton/BaseButton";
 
-interface IProps {
-  variant?: "outlined" | "solid";
-  size?: "small" | "medium" | "large";
+interface IProps extends React.ComponentProps<typeof BaseButton> {
   animation?: "none" | "filling";
-  className?: string;
 }
 
-export default function Button({
-  variant = "outlined",
-  children,
-  className,
-  size = "medium",
-  animation = "none",
-}: PropsWithChildren<IProps>) {
-  function specifiedButtons(): React.ReactNode {
-    if (animation === "filling") {
-      return (
-        <AnimatedFillingButton className={className} size={size} variant={variant}>
-          {children}
-        </AnimatedFillingButton>
-      );
-    }
-
-    return;
+export default function Button({ animation = "none", ...rest }: IProps) {
+  if (animation === "filling") {
+    return <AnimatedFillingButton {...rest} />;
   }
 
-  return (
-    <>
-      {animation === "none" ? (
-        <button
-          className={`${styles.root} ${className} ${styles[variant]} ${styles[size]}`}
-        >
-          {children}
-        </button>
-      ) : (
-        specifiedButtons()
-      )}
-    </>
-  );
+  return <BaseButton {...rest} />;
 }
