@@ -2,15 +2,23 @@ import React, { PropsWithChildren } from "react";
 
 import styles from "./P.module.scss";
 
-interface IProps {
+interface IProps extends React.HTMLAttributes<HTMLParagraphElement> {
   uppercase?: boolean;
-  className?: string;
 }
 
-export default function P({ children, uppercase, className }: PropsWithChildren<IProps>) {
+export default function P({
+  children,
+  uppercase,
+  className = "",
+  
+  ...props
+}: PropsWithChildren<IProps>) {
   return (
-    <div className={`${styles.root} ${uppercase ? styles.uppercase : ""} ${className}`}>
+    <p
+      className={`${styles.root} ${uppercase ? styles.uppercase : ""} ${className}`}
+      {...props}
+    >
       {children}
-    </div>
+    </p>
   );
 }

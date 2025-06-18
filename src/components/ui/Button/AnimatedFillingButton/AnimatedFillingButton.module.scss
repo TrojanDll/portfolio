@@ -1,0 +1,40 @@
+.root {
+  position: relative;
+  overflow: hidden;
+  font-family: var(--font-3);
+  font-weight: 743;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: var(--red);
+  border: 1px solid var(--red);
+  padding: 5px 30px;
+}
+
+.large {
+  font-size: 22px;
+  padding: 15px 52px;
+}
+
+.ripple {
+  position: absolute;
+  background-color: var(--red);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0);
+  z-index: -1;
+}
+
+.border {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 2px solid var(--red);
+  border-radius: 4px;
+  pointer-events: none;
+  transform: scale(1);
+  opacity: 0;
+  z-index: -1;
+}
