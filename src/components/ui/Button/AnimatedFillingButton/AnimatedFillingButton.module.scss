@@ -1,20 +1,3 @@
-.root {
-  position: relative;
-  overflow: hidden;
-  font-family: var(--font-3);
-  font-weight: 743;
-  font-size: 18px;
-  text-transform: uppercase;
-  color: var(--red);
-  border: 1px solid var(--red);
-  padding: 5px 30px;
-}
-
-.large {
-  font-size: 22px;
-  padding: 15px 52px;
-}
-
 .ripple {
   position: absolute;
   background-color: var(--red);

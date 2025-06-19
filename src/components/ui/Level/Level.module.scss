@@ -1,0 +1,23 @@
+.root {
+  display: flex;
+  column-gap: 6px;
+  // justify-content: center;
+  align-items: center;
+}
+
+.count {
+  font-family: var(--second-family);
+  color: var(--acid-green);
+  font-size: 26px;
+  line-height: 26px;
+}
+
+.text {
+  transform: translateY(5px);
+  font-size: 18px;
+  text-transform: uppercase;
+  color: var(--white);
+  opacity: 0.6;
+  font-weight: 700;
+  line-height: 18px;
+}

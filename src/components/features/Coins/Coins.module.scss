@@ -1,0 +1,32 @@
+.root {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+}
+
+.plusButton {
+  font-size: 20px !important;
+  border: 1px solid rgba(255, 255, 255, 0.29) !important;
+}
+
+.coins {
+  font-size: 26px;
+  color: var(--acid-green);
+  font-family: var(--second-family);
+}
+
+.description {
+  transform: translateY(5px);
+  letter-spacing: 0.07em;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: var(--white);
+  opacity: 0.6;
+  font-weight: 700;
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
