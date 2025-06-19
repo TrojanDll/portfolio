@@ -7,16 +7,20 @@ import Level from "@/components/ui/Level/Level";
 import Container from "@/components/ui/Container/Container";
 import Coins from "@/components/features/Coins/Coins";
 import { useGetStats } from "@/hooks/stats/get-stats.hook";
+import CurrentTime from "@/components/ui/CurrentTime/CurrentTime";
 
 export default function Header() {
   return (
-    <header className={styles.root}>
-      <Container>
+    <Container>
+      <header className={styles.root}>
         <div className={styles.right}>
           <Level />
           <Coins />
         </div>
-      </Container>
-    </header>
+        <div className={styles.left}>
+          <CurrentTime />
+        </div>
+      </header>
+    </Container>
   );
 }
