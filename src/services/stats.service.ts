@@ -9,7 +9,7 @@ class StatsService {
   }
 
   async editStats(data: IEditStatsDTO) {
-    const response = await axiosClassic.put<IEditStatsDTO>("/stats/1", data);
+    const response = await axiosClassic.put<IStatsDTO[]>("/stats/1", data);
     return response;
   }
 }

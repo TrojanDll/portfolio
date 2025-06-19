@@ -30,3 +30,18 @@
   align-items: center;
   gap: 6px;
 }
+
+.buttonWrapper {
+  position: relative; // нужна для абсолютного позиционирования тултипа внутри
+  display: inline-block; // ограничит тултип от flex-сжатия
+}
+
+.tooltipBody {
+  font-family: var(--font-3) !important;
+  color: var(--text-grey) !important;
+  border: 1px solid var(--text-grey) !important;
+}
+
+.spannedTooltipText {
+  color: var(--acid-green) !important;
+}

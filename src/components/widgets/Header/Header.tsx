@@ -9,24 +9,12 @@ import Coins from "@/components/features/Coins/Coins";
 import { useGetStats } from "@/hooks/stats/get-stats.hook";
 
 export default function Header() {
-  const { data, mutate, isPending, isError } = useGetStats();
-
-  useEffect(() => {
-    mutate();
-  }, []);
-
   return (
     <header className={styles.root}>
       <Container>
         <div className={styles.right}>
-          {data?.level && data.coins ? (
-            <>
-              <Level levelCount={Number(data.level)} />
-              <Coins coinstCount={Number(data.coins)} />
-            </>
-          ) : (
-            ""
-          )}
+          <Level />
+          <Coins />
         </div>
       </Container>
     </header>

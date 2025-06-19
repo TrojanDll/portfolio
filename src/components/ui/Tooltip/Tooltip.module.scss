@@ -1,0 +1,31 @@
+.root {
+  position: relative;
+}
+
+.tooltip {
+  font-family: var(--font-3);
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  padding: 10px;
+  background-color: var(--dark);
+  border: 1px solid var(--dark-grey);
+  border-radius: 7px;
+  font-size: 12px;
+  min-width: 50px;
+  max-width: 160px;
+
+  white-space: pre-wrap; // Разрешить перенос текста
+  word-wrap: break-word; // Переносить длинные слова
+  overflow-wrap: break-word;
+}
+
+.visible {
+  display: block;
+}
+
+.right {
+  left: calc(100% + 10px);
+}
