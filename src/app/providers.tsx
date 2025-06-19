@@ -10,7 +10,6 @@ export function Providers({ children }: PropsWithChildren) {
       defaultOptions: {
         queries: {
           refetchOnWindowFocus: false,
-          staleTime: 1 * 1000 * 60,
         },
       },
     })
