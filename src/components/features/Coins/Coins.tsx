@@ -36,8 +36,6 @@ export default function Coins() {
       });
       setCurrientCoins(`${Number(data.coins) + 1}`);
       setIsDonatedOnce(true);
-    } else if (isDonatedOnce) {
-      // alert("вы уже подарили 1 монетку");
     }
   }
 
@@ -54,7 +52,6 @@ export default function Coins() {
           ) : null
         }
         color="var(--dark)"
-        // className={styles.tooltip}
         classNames={{
           root: styles.tooltipRoot,
           body: styles.tooltipBody,
