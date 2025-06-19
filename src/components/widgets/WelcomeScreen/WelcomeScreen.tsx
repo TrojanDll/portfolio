@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useEffect, useLayoutEffect, useRef } from "react";
 
 import styles from "./WelcomeScreen.module.scss";
 import P from "@/components/ui/P/P";
@@ -8,6 +8,7 @@ import Button from "@/components/ui/Button/Button";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { useGSAP } from "@gsap/react";
+import useWelcomeScreen from "@/stores/welcome-screen/welcome-screen.store";
 
 gsap.registerPlugin(SplitText);
 
@@ -15,6 +16,10 @@ export default function WelcomeScreen() {
   const rootRef = useRef<HTMLDivElement>(null);
   const hiRef = useRef<HTMLParagraphElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const isEnteredToSiteOnce = useWelcomeScreen((state) => state.isEnteredOnce);
+  const setIsEnteredToSiteOnce = useWelcomeScreen((state) => state.setIsEnteredOnce);
 
   useLayoutEffect(() => {
     const gsapContext = gsap.context(() => {
@@ -71,35 +76,51 @@ export default function WelcomeScreen() {
   const { contextSafe } = useGSAP({ scope: rootRef });
 
   const handleButtonClick = contextSafe(() => {
-    gsap.to(rootRef.current, { y: "-100%", ease: "power2.out", duration: 1 });
+    gsap.to(rootRef.current, { y: "-100%", ease: "power2.out", duration: 0.8 });
+
+    timeoutRef.current = setTimeout(() => {
+      setIsEnteredToSiteOnce(true);
+    }, 1500);
   });
 
-  return (
-    <div ref={rootRef} className={styles.root}>
-      <p ref={hiRef} className={styles.greetings}>
-        Hi!
-      </p>
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
 
-      <div ref={contentRef} className={styles.content}>
-        <h1 className={styles.title}>Добро пожаловать на мой сайт-портфолио</h1>
-        <P className={styles.text}>
-          Я создал этот сайт так, чтобы он напоминал игровой или научно-фантастический
-          интерфейс.
-        </P>
-        <P className={styles.text}>
-          Вы найдете здесь «достижения» и «квесты», отражающие прогресс в моей
-          профессиональной жизни и связанные с тем, над чем я сейчас работаю.
-        </P>
-        <Button
-          onClick={handleButtonClick}
-          className={`${styles.button} btn`}
-          variant="outlined"
-          size="large"
-          animation="filling"
-        >
-          Войти в систему
-        </Button>
-      </div>
-    </div>
+  return (
+    <>
+      {!isEnteredToSiteOnce && (
+        <div ref={rootRef} className={styles.root}>
+          <p ref={hiRef} className={styles.greetings}>
+            Hi!
+          </p>
+
+          <div ref={contentRef} className={styles.content}>
+            <h1 className={styles.title}>Добро пожаловать на мой сайт-портфолио</h1>
+            <P className={styles.text}>
+              Я создал этот сайт так, чтобы он напоминал игровой или научно-фантастический
+              интерфейс.
+            </P>
+            <P className={styles.text}>
+              Вы найдете здесь «достижения» и «квесты», отражающие прогресс в моей
+              профессиональной жизни и связанные с тем, над чем я сейчас работаю.
+            </P>
+            <Button
+              onClick={handleButtonClick}
+              className={`${styles.button} btn`}
+              variant="outlined"
+              size="large"
+              animation="filling"
+            >
+              Войти в систему
+            </Button>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
