@@ -7,6 +7,7 @@ import P from "@/components/ui/P/P";
 import Button from "@/components/ui/Button/Button";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
+import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(SplitText);
 
@@ -67,6 +68,12 @@ export default function WelcomeScreen() {
     return () => gsapContext.revert();
   }, []);
 
+  const { contextSafe } = useGSAP({ scope: rootRef });
+
+  const handleButtonClick = contextSafe(() => {
+    gsap.to(rootRef.current, { y: "-100%", ease: "power2.out", duration: 1 });
+  });
+
   return (
     <div ref={rootRef} className={styles.root}>
       <p ref={hiRef} className={styles.greetings}>
@@ -84,6 +91,7 @@ export default function WelcomeScreen() {
           профессиональной жизни и связанные с тем, над чем я сейчас работаю.
         </P>
         <Button
+          onClick={handleButtonClick}
           className={`${styles.button} btn`}
           variant="outlined"
           size="large"
