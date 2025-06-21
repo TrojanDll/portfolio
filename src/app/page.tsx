@@ -1,3 +1,5 @@
+import Container from "@/components/ui/Container/Container";
+import ProfileSidebar from "@/components/widgets/ProfileSidebar/ProfileSidebar";
 import WelcomeScreen from "@/components/widgets/WelcomeScreen/WelcomeScreen";
 
 export default function Home() {
@@ -5,6 +7,9 @@ export default function Home() {
     <div>
       main
       <WelcomeScreen />
+      <Container>
+        <ProfileSidebar />
+      </Container>
     </div>
   );
 }
