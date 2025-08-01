@@ -1,11 +1,11 @@
-import ProfileImage from "@/components/ui/ProfileImage/ProfileImage";
+import ProfileImage from "@/shared/ui/ProfileImage/ProfileImage";
 import React from "react";
 
 export default function ProfileSidebar() {
   return (
     <div>
       ProfileSidebar
-      <ProfileImage />
+      <ProfileImage imageUrl="/public/img/profile-image.png" />
     </div>
   );
 }
