@@ -1,0 +1,12 @@
+.root {
+  position: relative;
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 92px;
+  left: 50%;
+  transform: translateX(-50%);
+  filter: blur(6px) brightness(0.6);
+  z-index: -2;
+}

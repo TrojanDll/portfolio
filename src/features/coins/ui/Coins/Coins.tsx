@@ -8,9 +8,6 @@ import useCoinsDonation from "@/features/coins/model/coins-donation.store";
 import { useEditStats } from "@/features/coins/model/hooks/edit-stats.hook";
 import { useGetStats } from "@/features/coins/model/hooks/get-stats.hook";
 
-import Button from "@/shared/ui/Button/Button";
-import { CustomTooltip } from "@/shared/ui/CustomTooltip/CustomTooltip";
-
 export function Coins() {
   const [currientCoins, setCurrientCoins] = useState<string | undefined>("");
 
@@ -39,6 +36,7 @@ export function Coins() {
       editStats({
         coins: `${Number(data.coins) + 1}`,
       });
+
       setCurrientCoins(`${Number(data.coins) + 1}`);
       setIsDonatedOnce(true);
     }

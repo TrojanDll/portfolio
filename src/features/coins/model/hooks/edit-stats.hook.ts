@@ -1,8 +1,9 @@
-import { statsService } from "@/features/coins/api/stats.service";
-import { IEditStatsDTO, IStats } from "@/shared/types/stats.types";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
-import { useEffect, useState } from "react";
+
+import { statsService } from "@/features/coins/api/stats.service";
+
+import { IEditStatsDTO } from "@/shared/types/stats.types";
 
 export function useEditStats() {
   const queryClient = useQueryClient();

@@ -1,7 +1,8 @@
-import { statsService } from "@/features/coins/api/stats.service";
+import { convertStatsDtoToStats } from "../convert-statsdto-to-stats.util";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
-import { convertStatsDtoToStats } from "../convert-statsdto-to-stats.util";
+
+import { statsService } from "@/features/coins/api/stats.service";
 
 export function useGetStats() {
   const queryClient = useQueryClient();
