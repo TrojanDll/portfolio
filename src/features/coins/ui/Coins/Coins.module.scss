@@ -4,11 +4,6 @@
   align-items: center;
 }
 
-.plusButton {
-  font-size: 20px !important;
-  border: 1px solid rgba(255, 255, 255, 0.29) !important;
-}
-
 .coins {
   font-size: 26px;
   color: var(--acid-green);
@@ -31,12 +26,6 @@
   gap: 6px;
 }
 
-.tooltipBody {
-  font-family: var(--font-3) !important;
-  color: var(--text-grey) !important;
-  border: 1px solid var(--text-grey) !important;
-}
-
-.spannedTooltipText {
-  color: var(--acid-green) !important;
+.tooltip {
+  max-width: 180px;
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import { CoinsPlusButton } from "../CoinsPlusButton/CoinsPlusButton";
 import styles from "./Coins.module.scss";
 import React, { useEffect, useState } from "react";
 
@@ -8,6 +9,7 @@ import { useEditStats } from "@/features/coins/model/hooks/edit-stats.hook";
 import { useGetStats } from "@/features/coins/model/hooks/get-stats.hook";
 
 import Button from "@/shared/ui/Button/Button";
+import { CustomTooltip } from "@/shared/ui/CustomTooltip/CustomTooltip";
 
 export function Coins() {
   const [currientCoins, setCurrientCoins] = useState<string | undefined>("");
@@ -44,33 +46,10 @@ export function Coins() {
 
   return (
     <div className={styles.root}>
-      <Tooltip
-        placement="right"
-        title={
-          isDonatedOnce ? (
-            <div>
-              Вы можете подарить только{" "}
-              <span className={styles.spannedTooltipText}>1</span> монетку
-            </div>
-          ) : null
-        }
-        color="var(--dark)"
-        classNames={{
-          root: styles.tooltipRoot,
-          body: styles.tooltipBody,
-        }}
-      >
-        <div>
-          <Button
-            onClick={handleAddCoinButtonClick}
-            className={styles.plusButton}
-            shape="square"
-            animation="filling"
-          >
-            +
-          </Button>
-        </div>
-      </Tooltip>
+      <CoinsPlusButton
+        isTooltipDisabled={!isDonatedOnce}
+        onClick={handleAddCoinButtonClick}
+      />
 
       <div className={styles.text}>
         <span className={styles.coins}>{currientCoins}</span>
