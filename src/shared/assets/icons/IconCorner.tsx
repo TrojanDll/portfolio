@@ -2,7 +2,7 @@ import React from "react";
 
 type TProps = React.SVGProps<SVGSVGElement>;
 
-const IconPlus: React.FC<TProps> = (props) => {
+const IconCorner: React.FC<TProps> = (props) => {
   return (
     <svg
       width="11"
@@ -20,4 +20,4 @@ const IconPlus: React.FC<TProps> = (props) => {
   );
 };
 
-export default IconPlus;
+export default IconCorner;

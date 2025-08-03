@@ -9,7 +9,6 @@ import Container from "@/shared/ui/Container/Container";
 export default function Home() {
   return (
     <div className={styles.root}>
-      main
       <Image
         className={styles.backgroundImage}
         width={1344}

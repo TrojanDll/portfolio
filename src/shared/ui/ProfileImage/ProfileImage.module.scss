@@ -1,0 +1,35 @@
+.root {
+  position: relative;
+  width: fit-content;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.corner {
+  position: absolute;
+}
+
+.topLeftCorner {
+  top: 0;
+  left: 0;
+
+  transform: translate(-1px, -1px);
+}
+
+.topRightCorner {
+  top: 0;
+  right: 0;
+  transform: translate(1px, -1px);
+}
+
+.BottomRightCorner {
+  bottom: 0;
+  right: 0;
+  transform: translate(1px, 1px);
+}
+
+.BottomLeftCorner {
+  bottom: 0;
+  left: 0px;
+  transform: translate(-1px, 1px);
+}
