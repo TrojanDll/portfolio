@@ -1,5 +1,5 @@
-import { axiosClassic } from "@/api/interceptors";
-import { IEditStatsDTO, IStatsDTO } from "@/types/stats.types";
+import { axiosClassic } from "@/shared/api/interceptors";
+import { IEditStatsDTO, IStatsDTO } from "@/shared/types/stats.types";
 
 class StatsService {
   async getStats() {

@@ -1,5 +1,5 @@
-import { statsService } from "@/services/stats.service";
-import { IEditStatsDTO, IStats } from "@/types/stats.types";
+import { statsService } from "@/features/coins/api/stats.service";
+import { IEditStatsDTO, IStats } from "@/shared/types/stats.types";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
 import { useEffect, useState } from "react";

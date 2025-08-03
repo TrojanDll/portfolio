@@ -1,19 +1,22 @@
 "use client";
 
+import styles from "./Coins.module.scss";
 import React, { useEffect, useState } from "react";
 
-import Button from "@/components/ui/Button/Button";
+import useCoinsDonation from "@/features/coins/model/coins-donation.store";
+import { useEditStats } from "@/features/coins/model/hooks/edit-stats.hook";
+import { useGetStats } from "@/features/coins/model/hooks/get-stats.hook";
 
-import styles from "./Coins.module.scss";
-import { useEditStats } from "@/hooks/stats/edit-stats.hook";
-import { useGetStats } from "@/hooks/stats/get-stats.hook";
-import useCoinsDonation from "@/stores/stats/coins-donation.store";
-import { Tooltip } from "antd";
+import Button from "@/shared/ui/Button/Button";
 
-export default function Coins() {
+export function Coins() {
   const [currientCoins, setCurrientCoins] = useState<string | undefined>("");
 
-  const { data, mutate: getStats, isPending: isGetStatsPending } = useGetStats();
+  const {
+    data,
+    mutate: getStats,
+    isPending: isGetStatsPending,
+  } = useGetStats();
   const { mutate: editStats } = useEditStats();
 
   const isDonatedOnce = useCoinsDonation((state) => state.isDonatedOnce);
@@ -24,7 +27,7 @@ export default function Coins() {
   }, []);
 
   useEffect(() => {
-    if (data) {
+    if (data?.coins) {
       setCurrientCoins(data.coins);
     }
   }, [isGetStatsPending]);

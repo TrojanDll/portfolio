@@ -1,6 +1,6 @@
-import Container from "@/components/ui/Container/Container";
-import ProfileSidebar from "@/components/widgets/ProfileSidebar/ProfileSidebar";
-import WelcomeScreen from "@/components/widgets/WelcomeScreen/WelcomeScreen";
+import Container from "@/shared/ui/Container/Container";
+import { ProfileSidebar } from "@/widgets/profile-sidebar";
+import { WelcomeScreen } from "@/widgets/welcome-screen";
 
 export default function Home() {
   return (

@@ -1,11 +1,9 @@
-import { statsService } from "@/services/stats.service";
-import { IStats } from "@/types/stats.types";
+import { statsService } from "@/features/coins/api/stats.service";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { convertStatsDtoToStats } from "../convert-statsdto-to-stats.util";
 
 export function useGetStats() {
-  // const [formatedData, setFormatedData] = useState<IStats>();
   const queryClient = useQueryClient();
 
   const { mutate, isPending, isSuccess, isError, data } = useMutation({
@@ -25,21 +23,9 @@ export function useGetStats() {
     },
   });
 
-  // useEffect(() => {
-  //   console.log("data?.data[0].coins");
-  //   console.log(data?.data[0].coins);
-
-  //   if (data) {
-  //     setFormatedData({
-  //       coins: data?.data[0].coins,
-  //       level: data?.data[0].level,
-  //     });
-  //   }
-  // }, [isPending, data]);
-
   return {
     mutate,
-    data: data?.data[0],
+    data: convertStatsDtoToStats(data?.data[0]),
     isPending,
     isSuccess,
     isError,

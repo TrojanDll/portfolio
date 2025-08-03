@@ -6,8 +6,8 @@ export interface IStatsDTO {
 }
 
 export interface IStats {
-  level: string | undefined;
-  coins: string | undefined;
+  level: string | null;
+  coins: string | null;
 }
 
 export type IEditStatsDTO = Partial<IStats>;

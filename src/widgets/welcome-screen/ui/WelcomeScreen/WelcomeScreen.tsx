@@ -3,23 +3,25 @@
 import React, { useEffect, useLayoutEffect, useRef } from "react";
 
 import styles from "./WelcomeScreen.module.scss";
-import P from "@/components/ui/P/P";
-import Button from "@/components/ui/Button/Button";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { useGSAP } from "@gsap/react";
-import useWelcomeScreen from "@/stores/welcome-screen/welcome-screen.store";
+import useWelcomeScreen from "@/widgets/welcome-screen/model/welcome-screen.store";
+import P from "@/shared/ui/P/P";
+import Button from "@/shared/ui/Button/Button";
 
 gsap.registerPlugin(SplitText);
 
-export default function WelcomeScreen() {
+export function WelcomeScreen() {
   const rootRef = useRef<HTMLDivElement>(null);
   const hiRef = useRef<HTMLParagraphElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const isEnteredToSiteOnce = useWelcomeScreen((state) => state.isEnteredOnce);
-  const setIsEnteredToSiteOnce = useWelcomeScreen((state) => state.setIsEnteredOnce);
+  const setIsEnteredToSiteOnce = useWelcomeScreen(
+    (state) => state.setIsEnteredOnce
+  );
 
   useLayoutEffect(() => {
     const gsapContext = gsap.context(() => {
@@ -100,14 +102,17 @@ export default function WelcomeScreen() {
           </p>
 
           <div ref={contentRef} className={styles.content}>
-            <h1 className={styles.title}>Добро пожаловать на мой сайт-портфолио</h1>
+            <h1 className={styles.title}>
+              Добро пожаловать на мой сайт-портфолио
+            </h1>
             <P className={styles.text}>
-              Я создал этот сайт так, чтобы он напоминал игровой или научно-фантастический
-              интерфейс.
+              Я создал этот сайт так, чтобы он напоминал игровой или
+              научно-фантастический интерфейс.
             </P>
             <P className={styles.text}>
-              Вы найдете здесь «достижения» и «квесты», отражающие прогресс в моей
-              профессиональной жизни и связанные с тем, над чем я сейчас работаю.
+              Вы найдете здесь «достижения» и «квесты», отражающие прогресс в
+              моей профессиональной жизни и связанные с тем, над чем я сейчас
+              работаю.
             </P>
             <Button
               onClick={handleButtonClick}

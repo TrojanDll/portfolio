@@ -3,7 +3,7 @@
 import React, { useEffect } from "react";
 
 import styles from "./Level.module.scss";
-import { useGetStats } from "@/hooks/stats/get-stats.hook";
+import { useGetStats } from "@/features/coins/model/hooks/get-stats.hook";
 
 interface IProps {
   levelCount?: number;
