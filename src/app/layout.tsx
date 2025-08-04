@@ -1,12 +1,12 @@
+import "./globals.scss";
+import { Providers } from "./providers";
 import type { Metadata } from "next";
 
-import "./globals.scss";
-
-import { Providers } from "./providers";
-import { SITE_NAME } from "@/shared/constants/seo.constants";
-import MainGlow from "@/shared/ui/MainGlow/MainGlow";
 import { Footer } from "@/widgets/footer";
 import { Header } from "@/widgets/header";
+
+import { SITE_NAME } from "@/shared/constants/seo.constants";
+import MainGlow from "@/shared/ui/MainGlow/MainGlow";
 
 export const metadata: Metadata = {
   title: {

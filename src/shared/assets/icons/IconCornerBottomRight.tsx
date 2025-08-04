@@ -15,7 +15,7 @@ const IconCornerBottomRight: React.FC<TProps> = (props) => {
       <path
         d="M8 0L8 8L1.04907e-06 8"
         stroke="#E84A4A"
-        stroke-width="2"
+        strokeWidth="2"
       />
     </svg>
   );

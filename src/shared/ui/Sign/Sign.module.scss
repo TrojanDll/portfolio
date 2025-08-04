@@ -1,0 +1,18 @@
+.root {
+  position: relative;
+  padding: 1px 4px;
+  background-color: var(--red);
+  color: var(--dark);
+  font-family: var(--font-3);
+  font-weight: 700;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 50%;
+  right: -10px;
+  transform: translateY(-50%);
+}
