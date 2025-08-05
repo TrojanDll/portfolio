@@ -3,6 +3,7 @@ import cn from "clsx";
 
 import { LabeledValue } from "@/shared/ui/LabeledValue/LabeledValue";
 import P from "@/shared/ui/P/P";
+import { Reward } from "@/shared/ui/Reward/Reward";
 import { SignWithContent } from "@/shared/ui/SignWithContent/SignWithContent";
 
 interface IProps {
@@ -32,7 +33,19 @@ export function ActiveQuest({ className }: IProps) {
         <LabeledValue
           title="Награды"
           className={styles.questItem}
-        ></LabeledValue>
+        >
+          <div className={styles.rewardsWrapper}>
+            <Reward
+              count={5}
+              imageUrl="/icons/microchip.png"
+            />
+
+            <Reward
+              count={15}
+              imageUrl="/icons/coin.png"
+            />
+          </div>
+        </LabeledValue>
       </SignWithContent>
     </div>
   );
