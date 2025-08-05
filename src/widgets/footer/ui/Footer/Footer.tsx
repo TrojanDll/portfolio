@@ -1,3 +1,5 @@
+import styles from "./Footer.module.scss";
+
 export function Footer() {
-  return <div>Footer</div>;
+  return <footer className={styles.root}>Footer</footer>;
 }

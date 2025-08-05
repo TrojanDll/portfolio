@@ -1,0 +1,31 @@
+.root {
+  position: relative;
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 92px;
+  left: 50%;
+  transform: translateX(-50%);
+  filter: blur(6px) brightness(0.6);
+  z-index: -2;
+  height: calc(100% - 92px);
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.body {
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: grid !important;
+  grid-template-columns: 212px 1fr 212px;
+  gap: 16px;
+  height: 100vh;
+  flex: 1;
+  min-height: 0;
+}
