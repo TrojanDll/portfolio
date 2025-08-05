@@ -9,11 +9,12 @@ const IconTelegram: React.FC<TProps> = (props) => {
       viewBox="0,0,256,256"
       width="24px"
       height="24px"
-      fill-rule="nonzero"
+      fillRule="nonzero"
+      fill="#ffffff"
       {...props}
     >
       <g
-        fill="#ffffff"
+        fill="inherit"
         fillRule="nonzero"
         stroke="none"
         strokeWidth="1"

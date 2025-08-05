@@ -1,0 +1,36 @@
+.labeledValue {
+  margin-top: 32px;
+
+  &:first-child {
+    margin: 0;
+  }
+}
+
+.socialLink {
+  color: var(--white);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px) scale(1.1);
+  }
+}
+
+.icon:not(.iconEmail) {
+  fill: var(--red);
+}
+
+.iconEmail {
+  stroke: var(--red);
+}
+
+.socialLinksWrapper {
+  display: flex;
+  column-gap: 8px;
+}
+
+.phone {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--second-family);
+  color: var(--red);
+}
