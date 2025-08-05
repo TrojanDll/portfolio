@@ -12,6 +12,7 @@
   --gold: #d4a944;
   --blue: #4aafe8;
   --green: #5de26a;
+  --grey: #7a7a7a;
   --text-grey: rgba(255, 255, 255, 0.6);
 
   --screen-desktop: 1520px;
@@ -46,7 +47,8 @@ body {
   font-family: "JetBrains Mono";
   font-style: normal;
   font-weight: 400;
-  src: url("/fonts/jetbrains-mono-v23-cyrillic_latin-regular.woff2") format("woff2");
+  src: url("/fonts/jetbrains-mono-v23-cyrillic_latin-regular.woff2")
+    format("woff2");
 }
 
 @font-face {
