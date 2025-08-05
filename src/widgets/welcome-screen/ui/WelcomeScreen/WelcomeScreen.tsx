@@ -1,14 +1,16 @@
 "use client";
 
-import React, { useEffect, useLayoutEffect, useRef } from "react";
-
+import { getIsEnteredOnceFromStorage } from "../../model/welcome-screen-session-storage";
 import styles from "./WelcomeScreen.module.scss";
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
-import { useGSAP } from "@gsap/react";
+import React, { useEffect, useLayoutEffect, useRef } from "react";
+
 import useWelcomeScreen from "@/widgets/welcome-screen/model/welcome-screen.store";
-import P from "@/shared/ui/P/P";
+
 import Button from "@/shared/ui/Button/Button";
+import P from "@/shared/ui/P/P";
 
 gsap.registerPlugin(SplitText);
 
@@ -20,7 +22,7 @@ export function WelcomeScreen() {
 
   const isEnteredToSiteOnce = useWelcomeScreen((state) => state.isEnteredOnce);
   const setIsEnteredToSiteOnce = useWelcomeScreen(
-    (state) => state.setIsEnteredOnce
+    (state) => state.setIsEnteredOnce,
   );
 
   useLayoutEffect(() => {
@@ -48,7 +50,7 @@ export function WelcomeScreen() {
           duration: 0.5,
           ease: "power2.out",
         },
-        "+=0.0"
+        "+=0.0",
       );
 
       const splitDescription = new SplitText(`.${styles.text}`, {
@@ -95,13 +97,22 @@ export function WelcomeScreen() {
 
   return (
     <>
-      {!isEnteredToSiteOnce && (
-        <div ref={rootRef} className={styles.root}>
-          <p ref={hiRef} className={styles.greetings}>
+      {!getIsEnteredOnceFromStorage() && (
+        <div
+          ref={rootRef}
+          className={styles.root}
+        >
+          <p
+            ref={hiRef}
+            className={styles.greetings}
+          >
             Hi!
           </p>
 
-          <div ref={contentRef} className={styles.content}>
+          <div
+            ref={contentRef}
+            className={styles.content}
+          >
             <h1 className={styles.title}>
               Добро пожаловать на мой сайт-портфолио
             </h1>
