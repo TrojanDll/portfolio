@@ -20,6 +20,7 @@ export function MainNavItem({
     <SignWithContent
       signText={title}
       className={cn(className, styles.root)}
+      signClassName=""
     >
       MainNavItem
     </SignWithContent>

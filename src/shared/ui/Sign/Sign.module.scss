@@ -1,12 +1,13 @@
 .root {
   position: relative;
   padding: 1px 4px;
-  background-color: rgba(var(--red) 0.7);
+  background-color: rgba(var(--redRGB), 0.7);
   color: var(--dark);
   font-family: var(--font-3);
   font-weight: 700;
   font-size: 1.125rem;
   text-transform: uppercase;
+  overflow: hidden;
 }
 
 .backgroundImage {
