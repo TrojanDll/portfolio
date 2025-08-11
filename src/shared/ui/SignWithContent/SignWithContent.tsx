@@ -7,6 +7,7 @@ interface IProps {
   className?: string;
   signClassName?: string;
   signText?: string;
+  isDisabled?: boolean;
 }
 
 export function SignWithContent({
@@ -14,11 +15,22 @@ export function SignWithContent({
   children,
   signText,
   signClassName,
+  isDisabled = false,
 }: PropsWithChildren<IProps>) {
   return (
     <div className={cn(className, styles.root)}>
-      <Sign className={signClassName}>{signText}</Sign>
-      <div className={styles.content}>{children}</div>
+      <Sign
+        signBgColorVariant={isDisabled ? "bgDark" : "default"}
+        textColorVariant="textLight"
+        className={signClassName}
+      >
+        {signText}
+      </Sign>
+      <div
+        className={cn(styles.content, isDisabled ? styles.disabledContent : "")}
+      >
+        {children}
+      </div>
     </div>
   );
 }

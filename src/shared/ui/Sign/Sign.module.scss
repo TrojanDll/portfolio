@@ -1,13 +1,12 @@
 .root {
   position: relative;
   padding: 1px 4px;
-  background-color: var(--red);
+  background-color: rgba(var(--red) 0.7);
   color: var(--dark);
   font-family: var(--font-3);
   font-weight: 700;
   font-size: 1.125rem;
   text-transform: uppercase;
-  opacity: 0.7;
 }
 
 .backgroundImage {
@@ -15,4 +14,12 @@
   top: 50%;
   right: -10px;
   transform: translateY(-50%);
+}
+
+.textLight {
+  color: var(--white);
+}
+
+.bgDark {
+  background: var(--dark-grey);
 }

@@ -1,5 +1,7 @@
 import styles from "./MainNavItem.module.scss";
-import cn from 'clsx'
+import cn from "clsx";
+
+import { SignWithContent } from "@/shared/ui/SignWithContent/SignWithContent";
 
 interface IProps {
   className?: string;
@@ -8,8 +10,18 @@ interface IProps {
   isActive?: boolean;
 }
 
-export function MainNavItem({ className }: IProps) {
+export function MainNavItem({
+  className,
+  description,
+  isActive,
+  title,
+}: IProps) {
   return (
-    <div className={cn(className, styles.root)}>MainNavItem</div>
+    <SignWithContent
+      signText={title}
+      className={cn(className, styles.root)}
+    >
+      MainNavItem
+    </SignWithContent>
   );
 }

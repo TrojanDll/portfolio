@@ -5,11 +5,25 @@ import { PropsWithChildren } from "react";
 
 interface IProps {
   className?: string;
+  textColorVariant?: "default" | "textLight";
+  signBgColorVariant?: "default" | "bgDark";
 }
 
-export function Sign({ className, children }: PropsWithChildren<IProps>) {
+export function Sign({
+  className,
+  children,
+  textColorVariant = "default",
+  signBgColorVariant = "default",
+}: PropsWithChildren<IProps>) {
   return (
-    <div className={cn(className, styles.root)}>
+    <div
+      className={cn(
+        className,
+        styles.root,
+        styles[textColorVariant],
+        styles[signBgColorVariant],
+      )}
+    >
       {children}
       <Image
         className={styles.backgroundImage}
