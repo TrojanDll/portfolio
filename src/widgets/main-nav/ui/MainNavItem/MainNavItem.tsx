@@ -8,6 +8,7 @@ interface IProps {
   title?: string;
   description?: string;
   isActive?: boolean;
+  onClick: () => void;
 }
 
 export function MainNavItem({
@@ -15,14 +16,21 @@ export function MainNavItem({
   description,
   isActive,
   title,
+  onClick,
 }: IProps) {
   return (
-    <SignWithContent
-      signText={title}
+    <button
+      onClick={onClick}
       className={cn(className, styles.root)}
-      signClassName=""
     >
-      MainNavItem
-    </SignWithContent>
+      <SignWithContent
+        signText={title}
+        signTextClassName={styles.text}
+        isDisabled={!isActive}
+        contentBgVariant="dark"
+      >
+        {description}
+      </SignWithContent>
+    </button>
   );
 }

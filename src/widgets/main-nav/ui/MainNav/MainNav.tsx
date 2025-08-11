@@ -24,6 +24,7 @@ export function MainNav({ className }: IProps) {
     <div className={cn(className, styles.root)}>
       {mainNavItemsData.map((item, i) => (
         <MainNavItem
+          onClick={() => setActiveMenuItemIndex(i)}
           key={i}
           className={styles.mainNavItem}
           description={item.description}

@@ -1,0 +1,16 @@
+.root {
+  width: 200px;
+  display: block;
+  text-align: left;
+}
+
+.text {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 0.625rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  line-height: 110%;
+  color: #fff;
+  opacity: 0.5;
+}
