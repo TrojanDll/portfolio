@@ -1,3 +1,9 @@
+import { ProjectsSwiper } from "@/widgets/projects-swiper/ui/ProjectsSwiper/ProjectsSwiper";
+
 export default function Home() {
-  return <div></div>;
+  return (
+    <div>
+      <ProjectsSwiper />
+    </div>
+  );
 }

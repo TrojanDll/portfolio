@@ -29,7 +29,7 @@ export function CustomTooltip({
 
   return (
     <div>
-      <Tooltip.Provider delayDuration={200}>
+      <Tooltip.Provider delayDuration={50}>
         <Tooltip.Root
           open={disabled ? false : open}
           onOpenChange={setOpen}
