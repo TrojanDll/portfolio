@@ -1,6 +1,6 @@
 import styles from "./ContentWrapper.module.scss";
 import cn from "clsx";
-import { PropsWithChildren } from "react";
+import { type PropsWithChildren } from "react";
 
 import IconCornerBottomLeft from "@/shared/assets/icons/IconCornerBottomLeft";
 import IconCornerBottomRight from "@/shared/assets/icons/IconCornerBottomRight";

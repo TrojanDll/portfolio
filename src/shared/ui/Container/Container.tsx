@@ -1,6 +1,6 @@
 import styles from "./Container.module.scss";
 import cn from "clsx";
-import React, { PropsWithChildren } from "react";
+import React, { type PropsWithChildren } from "react";
 
 interface IProps extends React.HTMLAttributes<HTMLDivElement> {}
 
