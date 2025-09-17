@@ -16,8 +16,8 @@ export function ProjectsSwiper({ className }: IProps) {
     <div className={cn(className, styles.root)}>
       <Swiper
         className={styles.swiper}
-        spaceBetween={50}
-        slidesPerView={1}
+        spaceBetween={16}
+        slidesPerView={3}
         onSlideChange={(swiper: SwiperClass) => {}}
         onSwiper={setSwiper}
         style={{ width: "100%" }} // Добавьте это
@@ -26,7 +26,6 @@ export function ProjectsSwiper({ className }: IProps) {
         <SwiperSlide className={styles.slide}>Slide 1</SwiperSlide>
         <SwiperSlide className={styles.slide}>Slide 1</SwiperSlide>
         <SwiperSlide className={styles.slide}>Slide 1</SwiperSlide>
-        ...
       </Swiper>
     </div>
   );

@@ -1,7 +1,7 @@
 import { Sign } from "../Sign/Sign";
 import styles from "./SignWithContent.module.scss";
 import cn from "clsx";
-import { PropsWithChildren } from "react";
+import { type PropsWithChildren } from "react";
 
 interface IProps {
   className?: string;

@@ -27,7 +27,7 @@ export function MainNavItem({
         signText={title}
         signTextClassName={styles.text}
         isDisabled={!isActive}
-        contentBgVariant="dark"
+        // contentBgVariant="dark"
       >
         {description}
       </SignWithContent>
