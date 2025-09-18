@@ -1,4 +1,4 @@
-import { IMainNavItemsData } from "./main-nav-items.types";
+import { type IMainNavItemsData } from "./main-nav-items.types";
 
 export const mainNavItemsData: IMainNavItemsData[] = [
   {
