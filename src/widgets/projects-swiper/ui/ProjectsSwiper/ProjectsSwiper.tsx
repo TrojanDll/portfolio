@@ -41,6 +41,7 @@ export function ProjectsSwiper({ className }: IProps) {
         onSlideChange={(swiper: SwiperClass) => {}}
         onSwiper={setSwiper}
         style={{ width: "100%" }}
+        autoHeight={true}
       >
         <SwiperSlide className={styles.slide}>
           <ProjectsSwiperSlide slideData={PROJECTS[0]} />

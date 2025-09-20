@@ -1,0 +1,28 @@
+.root {
+  // height: auto;
+  // height: 500px;
+  height: auto;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.imageContainer {
+  position: relative;
+  width: 410px;
+  height: 502px;
+}
+
+.bgImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  filter: blur(4px);
+  opacity: 0.5;
+  width: 408px;
+  height: 500px;
+}
+
+.thumbnailImage {
+  width: 100%;
+  height: auto;
+}
